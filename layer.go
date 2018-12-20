@@ -13,7 +13,7 @@ type Layer struct {
 
 func NewLayer(in, out int) *Layer {
 	return &Layer{
-		Weights: *num.NewMat(in, out),
+		Weights: *num.NewMat(out, in),
 		Biasas:  *num.NewVector(out),
 	}
 }
@@ -29,7 +29,7 @@ func (l *Layer) randomize() {
 	height, width := l.Weights.Dim()
 	for i := 0; i < height; i++ {
 		for j := 0; j < width; j++ {
-			l.Weights[i][j] = rand.Float64()
+			l.Weights[i][j] = (rand.Float64() - 0.5) * 10
 		}
 	}
 }

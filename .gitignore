@@ -1,3 +1,5 @@
 ./build
+./debug
 *.jpg
-.vscode/**
+.vscode
+./hello-ml
