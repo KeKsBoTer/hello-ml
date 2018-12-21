@@ -13,6 +13,10 @@ import (
 
 func main() {
 
+	if len(os.Args) < 1 {
+		fmt.Println("run with 'train' or 'test' as argument")
+		return
+	}
 	mode := os.Args[1]
 
 	rand.Seed(time.Now().UnixNano())
